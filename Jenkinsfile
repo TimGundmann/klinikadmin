@@ -3,7 +3,7 @@ node {
       git 'https://github.com/TimGundmann/klinikadmin.git'
    }
    stage('Test') {
-   	  env.DISPLAY=:1
+   	  env.DISPLAY=':1'
 	  sh 'npm install'
 	  sh 'ng test --watch false'
    }
