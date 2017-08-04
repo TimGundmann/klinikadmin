@@ -10,7 +10,7 @@ node {
 	  }
    }
    stage('Build') {
-	  sh 'ng build --prod -aot'
+	  sh 'ng build --prod -aot --base-href ./admin'
    }
    stage('Docker Deploy') {
         sh "docker-compose stop"
