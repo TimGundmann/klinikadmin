@@ -4,7 +4,7 @@ node {
    }
    stage('Test') {
 	  env.DISPLAY=':2'
-   	  wrap([$class: 'Xvfb', displayNameOffset: '2']) {
+   	  wrap([$class: 'Xvfb', displayNameOffset: 2]) {
 		  sh 'npm install'
 		  sh 'ng test --watch false --single-run true'
 	  }
