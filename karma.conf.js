@@ -22,11 +22,14 @@ module.exports = function (config) {
     angularCli: {
       environment: 'dev'
     },
-    reporters: ['progress', 'kjhtml'],
+		reporters : config.angularCli && config.angularCli.codeCoverage
+			? [ 'progress', 'coverage-istanbul' ]
+			: [ 'progress', 'kjhtml' ],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
+	browsers: ['Chrome_without_gpu'],
     customLaunchers: {
     	Chrome_without_gpu: {
           base: 'Chrome',
