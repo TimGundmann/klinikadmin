@@ -3,8 +3,8 @@ node {
       git 'https://github.com/TimGundmann/klinikadmin.git'
    }
    stage('Test') {
-	  env.DISPLAY=':1'
-   	  wrap([$class: 'Xvfb']) {
+	  env.DISPLAY=':2'
+   	  wrap([$class: 'Xvfb', displayNameOffset: '2']) {
 		  sh 'npm install'
 		  sh 'ng test --watch false --single-run true'
 	  }
