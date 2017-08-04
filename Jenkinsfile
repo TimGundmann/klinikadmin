@@ -7,7 +7,7 @@ node {
 	  sh 'ps -aux | grep Xvfb'
    	  env.DISPLAY=':1'
 	  sh 'npm install'
-	  sh 'ng test --watch false'
+	  sh 'ng test --watch false --single-run true'
    }
    stage('Build') {
 	  sh 'ng build --prod -aot'
